@@ -15,14 +15,14 @@ const PORT = process.env.PORT || 8000
 // const pathName = path.resolve()
 
 app.use(cors({
-  origin: 'https://blogify-frontend-mu.vercel.app', // Only allow this specific origin
+  origin: 'https://blogify-frontend-mu.vercel.app//', // Only allow this specific origin
   credentials: true, // Allow credentials
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'], // Specify allowed methods
   allowedHeaders: ['Content-Type', 'Authorization'], // Specify allowed headers
 }));
 
 app.use((req, res, next) => {
-  const allowedOrigin = 'https://blogify-frontend-mu.vercel.app';
+  const allowedOrigin = 'https://blogify-frontend-mu.vercel.app//';
   
   if (req.headers.origin === allowedOrigin) {
     res.setHeader('Access-Control-Allow-Origin', allowedOrigin);
@@ -71,20 +71,20 @@ app.get('/api/', async(req, res) => {
     const allBlogs = await blogModel.find({}).populate('createdBy')
     res.json(allBlogs)
 })
-app.use('api/', singUp)
-app.use('api/', login)
-app.use('api/' ,showImages)
-app.use('api/' ,showProfile)
-app.use('api/' ,clearCookies)
-app.use('api/' ,viewBlog)
-app.use('api/', addComment)
-app.use('api/', deleteComment)
-app.use('api/', admin)
-app.use('api/', myProfile)
-app.use('api/', cheackUser ,verifyUser)
-app.use('api/', cheackUser ,userDelete)
-app.use('api/', cheackUser ,addBlog)
-app.use('api/', cheackUser ,deleteBlog)
+app.use('/api/', singUp)
+app.use('/api/', login)
+app.use('/api/' ,showImages)
+app.use('/api/' ,showProfile)
+app.use('/api/' ,clearCookies)
+app.use('/api/' ,viewBlog)
+app.use('/api/', addComment)
+app.use('/api/', deleteComment)
+app.use('/api/', admin)
+app.use('/api/', myProfile)
+app.use('/api/', cheackUser ,verifyUser)
+app.use('/api/', cheackUser ,userDelete)
+app.use('/api/', cheackUser ,addBlog)
+app.use('/api/', cheackUser ,deleteBlog)
 
 // app.use(express.static(path.join(pathName, "frontend/build")))
 // app.get('*', (_,res) => {
