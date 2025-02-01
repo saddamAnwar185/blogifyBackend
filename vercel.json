@@ -18,7 +18,7 @@
       "headers": [
         {
           "key": "Access-Control-Allow-Origin",
-          "value": "https://saddamanwar185.github.io/"
+          "value": "https://blogify-frontend-mu.vercel.app/"
         },
         {
           "key": "Access-Control-Allow-Methods",
