@@ -15,14 +15,14 @@ const PORT = process.env.PORT || 8000
 // const pathName = path.resolve()
 
 app.use(cors({
-  origin: 'http://localhost:3000', // Only allow this specific origin
+  origin: 'https://blogify-frontend-mu.vercel.app/', // Only allow this specific origin
   credentials: true, // Allow credentials
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'], // Specify allowed methods
   allowedHeaders: ['Content-Type', 'Authorization'], // Specify allowed headers
 }));
 
 app.use((req, res, next) => {
-  const allowedOrigin = 'http://localhost:3000';
+  const allowedOrigin = 'https://blogify-frontend-mu.vercel.app/';
   
   if (req.headers.origin === allowedOrigin) {
     res.setHeader('Access-Control-Allow-Origin', allowedOrigin);
