@@ -15,7 +15,7 @@ const PORT = process.env.PORT || 8000
 // const pathName = path.resolve()
 
 app.use(cors({
-  origin: 'http://localhost:3000/', // Allow only your frontend
+  origin: 'https://blogify-frontend-mu.vercel.app/', // Allow only your frontend
   methods: ['GET', 'POST', 'PUT', 'DELETE'], // Allowed HTTP methods
   credentials: true, // Allow cookies and authentication headers
 }));
