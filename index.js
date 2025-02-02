@@ -45,9 +45,11 @@ app.use(express.json())
 app.use(bodyParser.json())
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser())
-const staticPath = path.join(__dirname, '/uploads'); // Change 'public' to your static folder
-app.use(serveStatic(staticPath));
-app.use(express.static(staticPath));
+app.use('/uploads', express.static(path.join(__dirname, 'uploads'), {
+  setHeaders: (res) => {
+    res.setHeader('Access-Control-Allow-Origin', '*'); // Allow all origins
+  }
+}));
 
 app.get("/", (req, res) => {
     res.json({
