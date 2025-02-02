@@ -47,7 +47,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser())
 app.use('/uploads', express.static(path.join(__dirname, 'uploads'), {
   setHeaders: (res) => {
-    res.setHeader('Access-Control-Allow-Origin', '*'); // Allow all origins
+    res.setHeader('Access-Control-Allow-Origin', 'https://blogify-frontend-mu.vercel.app'); // Allow all origins
   }
 }));
 
