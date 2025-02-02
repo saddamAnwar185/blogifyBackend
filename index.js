@@ -20,6 +20,8 @@ app.use(cors({
   credentials: true, // Allow cookies and authentication headers
 }));
 
+app.options('/api/*', cors());
+
 //Routes
 const singUp = require('./routes/singUp')
 const login = require('./routes/login')
